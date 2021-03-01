@@ -3,7 +3,7 @@ let playlistName;
 document.querySelector(".login").onclick = function () {
   const authOptions = {
     clientID: "d4530bfc63064a4493176570357abb89",
-    redirectURI: window.location.origin,
+    redirectURI: `${window.location.origin}/`,
     scopes: "user-read-private playlist-modify-public playlist-modify-private",
   };
   const requestURL = `https://accounts.spotify.com/authorize?response_type=token&client_id=${
