@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="shortcut icon" href="./images/spotify.png" type="image/x-icon" />
+    <title>YTSP - Spotify to Youtube Playlist Drifter</title>
+  </head>
+  <body>
+    <header id="header" class="flex-center">
+      <div class="logo">
+        <img src="./images/spotify.png" alt="website logo" />
+        <h1>YTSP - Youtube to Spotify Playlist Drifter</h1>
+      </div>
+      <a href="https://github.com/ziadevcom"
+        ><img src="./images/github-green.svg" alt="github profile link"
+      /></a>
+    </header>
+    <div class="container">
+      <div id="login" class="flex-center hidden">
+        <h1>
+          Looks like you haven't connected your spotify account yet. You can do
+          that by clicking the button below.
+        </h1>
+        <button class="login">Login</button>
+      </div>
+      <div id="welcome" class="flex-center hidden">
+        <img src="" alt="user profile picture" id="avatar" />
+        <h2></h2>
+      </div>
+      <div id="playlist" class="disabled">
+        <input type="text" />
+        <button onclick="fetchPlaylist(this)" class="btn">Copy Playlist</button>
+        <small
+          >Please make sure your playlist is public. The ID of playlist is in
+          url after <b>?list=</b>. Normally, looks like this:
+          <b>PL8Wo4RzFFIaqiUtJbaCMTXyXkaRhpenhM</b>.</small
+        >
+      </div>
+      <div style="margin-top: 1rem" class="hidden">
+        <button
+          id="addToSpotify"
+          class="login disabled"
+          onclick="addToSpotify()"
+        >
+          Add to Spotify
+        </button>
+      </div>
+      <div id="playlistData"></div>
+    </div>
+    <footer id="footer" class="flex-center">
+      <p>
+        Made with 💗 by
+        <a href="https://github.com/ziadevcom">Zia Ahmad</a> from Pakistan
+      </p>
+    </footer>
+  </body>
+  <script src="./app.js"></script>
+</html>

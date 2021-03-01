@@ -1,0 +1,20 @@
+{
+  "name": "youtube-to-spotify",
+  "version": "1.0.0",
+  "description": "an app that copies youtube playlist to spotify",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zia Ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "puppeteer-extra-plugin-adblocker": "^2.11.10",
+    "puppeteer-extra-plugin-stealth": "^2.7.5"
+  }
+}
