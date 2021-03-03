@@ -107,6 +107,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("*", function (req, res) {
-  res.status(404).redirect("http://localhost:3000");
+  res.status(404).redirect(authOptions.redirectURI);
 });
 app.listen(process.env.PORT || 3000);

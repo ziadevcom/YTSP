@@ -68,7 +68,9 @@ async function fetchPlaylist(btn) {
     btn.parentElement.classList.add("disabled");
     btn.previousElementSibling.style.borderColor = "var(--primary)";
     let playlistID = btn.previousElementSibling.value;
-    let response = await fetch(`${authOptions.redirectURI}${playlistID}`);
+    let response = await fetch(
+      `${authOptions.redirectURI}playlist/${playlistID}`
+    );
     let playlist = await response.json();
     playlistName = playlist.playlistTitle;
     playlist.videos.forEach((video) => {
@@ -100,7 +102,7 @@ async function addToSpotify() {
   try {
     trackIDs.forEach(async (videoID) => {
       let video = videoID.getAttribute("videoid");
-      let response = await fetch(`http://localhost:3000/track/${video}`);
+      let response = await fetch(`${authOptions.redirectURI}track/${video}`);
       let data = await response.json();
       const songTitle = data.songName;
       getSpotifyTrack(songTitle, videoID).then((trackToAdd) => {
