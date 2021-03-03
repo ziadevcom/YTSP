@@ -1,11 +1,11 @@
 let user = {};
 let playlistName;
+const authOptions = {
+  clientID: "d4530bfc63064a4493176570357abb89",
+  redirectURI: `${window.location.origin}/`,
+  scopes: "user-read-private playlist-modify-public playlist-modify-private",
+};
 document.querySelector(".login").onclick = function () {
-  const authOptions = {
-    clientID: "d4530bfc63064a4493176570357abb89",
-    redirectURI: `${window.location.origin}/`,
-    scopes: "user-read-private playlist-modify-public playlist-modify-private",
-  };
   const requestURL = `https://accounts.spotify.com/authorize?response_type=token&client_id=${
     authOptions.clientID
   }&scope=${encodeURIComponent(
@@ -68,7 +68,7 @@ async function fetchPlaylist(btn) {
     btn.parentElement.classList.add("disabled");
     btn.previousElementSibling.style.borderColor = "var(--primary)";
     let playlistID = btn.previousElementSibling.value;
-    let response = await fetch(`http://localhost:3000/playlist/${playlistID}`);
+    let response = await fetch(`${authOptions.redirectURI}${playlistID}`);
     let playlist = await response.json();
     playlistName = playlist.playlistTitle;
     playlist.videos.forEach((video) => {
